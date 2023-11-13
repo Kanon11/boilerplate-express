@@ -22,7 +22,9 @@ app.get('/now', (req, res, next) => {
 }, (req, res) => {
     return res.send({ time: req.time });
 })
-
+app.get('/:word/echo', (req, res) => {
+    return res.send({ echo: req.params.word });
+})
 
 
 
