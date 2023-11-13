@@ -35,7 +35,7 @@ app.route('/name').get((req, res, next) => {
 },(req, res) => {
     return res.send({ name: `${req.query.first} ${req.query.last}` });
 }).post((req, res) => {
-    return res.send({ name: `${req.query.first} ${req.query.last}` });
+    return res.send({ name: `${req.body.first} ${req.body.last}` });
 })
 
 
