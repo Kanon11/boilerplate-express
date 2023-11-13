@@ -25,7 +25,17 @@ app.get('/now', (req, res, next) => {
 app.get('/:word/echo', (req, res) => {
     return res.send({ echo: req.params.word });
 })
-
+// app.use('/name', (req, res) => {
+//     return res.send({ name: `${req.query.first} ${req.query.last}` });
+// })
+app.route('/name').get((req, res, next) => {
+    console.log("from middleware");
+    next();
+},(req, res) => {
+    return res.send({ name: `${req.query.first} ${req.query.last}` });
+}).post((req, res) => {
+    return res.send({ name: `${req.query.first} ${req.query.last}` });
+})
 
 
 
